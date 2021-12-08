@@ -42,6 +42,14 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::put('wishlist/{id}', 'Api\WishlistController@update');
     Route::delete('wishlist/{id}', 'Api\WishlistController@destroy');
     Route::get('wishlist/{id}', 'Api\WishlistController@showbyuser');
+
+    // TOKO
+    Route::get('toko', 'Api\TokoController@index');
+    Route::get('toko/{id}', 'Api\TokoController@show');
+    Route::post('toko', 'Api\TokoController@store');
+    Route::put('toko/{id}', 'Api\TokoController@update');
+    Route::delete('toko/{id}', 'Api\TokoController@destroy');
+    Route::get('toko/{id}', 'Api\TokoController@showbyuser');
 });
 
 Route::get('email/verify/{id}', 'Api\EmailVerificationController@verify')->name('verificationapi.verify');
